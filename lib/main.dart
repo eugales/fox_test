@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/features/transaction_history/models/stub.dart';
-import 'package:test_app/features/transaction_history/models/transaction_history_model.dart';
+import 'package:test_app/features/transaction_history/models/history_model.dart';
 import 'package:test_app/features/transaction_history/transaction_history_page.dart';
 
 void main() {
@@ -15,15 +15,33 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.amber,
+        primarySwatch: Colors.grey,
       ),
-      home: Container(),
+      home: const MyWidget(),
+    );
+  }
+}
+
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.of(context)
+                .push(TransactionHistoryPage.navigate(context));
+          },
+          child: const Text('Transaction History Page'),
+        ),
+      ),
     );
   }
 }
