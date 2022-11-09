@@ -5,6 +5,7 @@ import 'package:test_app/features/transaction_history/models/history_model.dart'
 import 'package:test_app/features/transaction_history/widgets/operation_item.dart';
 import 'package:test_app/features/transaction_history/widgets/th_header_delegate.dart';
 import 'package:test_app/features/transaction_history/widgets/th_app_bar.dart';
+import 'package:test_app/features/transaction_history/widgets/th_sort_header/th_sort_header.dart';
 
 class TransactionHistoryPage extends StatelessWidget {
   const TransactionHistoryPage({super.key, required this.history});
@@ -42,6 +43,7 @@ class TransactionHistoryPage extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           const THAppBar(),
+          const THSortHeader(),
           for (var map in history.historyDated.entries) ...[
             makeHeader(map.key),
             SliverList(

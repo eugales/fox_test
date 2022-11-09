@@ -8,4 +8,7 @@ class _Images {
   final String plus = 'assets/images/plus.png';
   final String minus = 'assets/images/minus.png';
   final String arrowBack = 'assets/images/arrow_back.png';
+  final String arrowDown = 'assets/images/arrow_down.png';
+  final String calendar = 'assets/images/calendar.png';
+  
 }
