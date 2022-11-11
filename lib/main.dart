@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/features/transaction_history/models/stub.dart';
-import 'package:test_app/features/transaction_history/models/history_model.dart';
+import 'package:test_app/features/date_picker/date_picker_page.dart';
 import 'package:test_app/features/transaction_history/transaction_history_page.dart';
 
 void main() {
@@ -33,13 +32,30 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context)
-                .push(TransactionHistoryPage.navigate(context));
-          },
-          child: const Text('Transaction History Page'),
+      body: SizedBox(
+        width: double.infinity,
+        height: double.infinity,
+        child: Wrap(
+          alignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          runAlignment: WrapAlignment.center,
+          spacing: 16,
+          direction: Axis.vertical,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context)
+                    .push(TransactionHistoryPage.navigate(context));
+              },
+              child: const Text('Transaction History Page'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(DatePickerPage.page(context));
+              },
+              child: const Text('Date Picker Page'),
+            ),
+          ],
         ),
       ),
     );
