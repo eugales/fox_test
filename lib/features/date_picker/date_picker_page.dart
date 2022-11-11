@@ -35,19 +35,17 @@ class _DatePickerPageState extends State<DatePickerPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Builder(builder: (context) {
-            return Padding(
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
-              child: DatePicker(
-                _selectedDate.subtract(const Duration(days: 30)),
-                initialSelectedDate: _selectedDate,
-                dateTextStyle: defaultDateTextStyle,
-                selectionColor: const Color(0xFF7288FA),
-                locale: 'ru_RU',
-                controller: datePickerController,
-              ),
-            );
-          })
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+            child: DatePicker(
+              _selectedDate.subtract(const Duration(days: 30)),
+              initialSelectedDate: _selectedDate,
+              dateTextStyle: defaultDateTextStyle,
+              selectionColor: const Color(0xFF7288FA),
+              locale: 'ru_RU',
+              controller: datePickerController,
+            ),
+          )
         ],
       ),
     );

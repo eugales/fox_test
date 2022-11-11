@@ -6,6 +6,7 @@
 /// ***
 
 import 'package:date_picker_timeline/gestures/tap.dart';
+import 'package:date_picker_timeline/extra/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -17,7 +18,7 @@ class DateWidget extends StatelessWidget {
   final DateSelectionCallback? onDateSelected;
   final String? locale;
 
-  DateWidget({
+  const DateWidget({
     required this.date,
     required this.monthTextStyle,
     required this.dayTextStyle,
@@ -33,23 +34,26 @@ class DateWidget extends StatelessWidget {
     return InkWell(
       child: Container(
         width: width,
-        margin: EdgeInsets.all(3.0),
+        padding: const EdgeInsets.all(3.0),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+          borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+          border: Border.all(color: const Color(0xffEFF1FF)),
           color: selectionColor,
         ),
         child: Padding(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text(new DateFormat("MMM", locale).format(date).toUpperCase(), // Month
-                  style: monthTextStyle),
+              // Text(
+              //     DateFormat("MMM", locale).format(date).toUpperCase(), // Month
+              //     style: monthTextStyle),
+              Text(
+                  DateFormat("E", locale).format(date).capitalize(), // WeekDay
+                  style: dayTextStyle),
               Text(date.day.toString(), // Date
                   style: dateTextStyle),
-              Text(new DateFormat("E", locale).format(date).toUpperCase(), // WeekDay
-                  style: dayTextStyle)
             ],
           ),
         ),
@@ -58,7 +62,7 @@ class DateWidget extends StatelessWidget {
         // Check if onDateSelected is not null
         if (onDateSelected != null) {
           // Call the onDateSelected Function
-          onDateSelected!(this.date);
+          onDateSelected!(date);
         }
       },
     );
