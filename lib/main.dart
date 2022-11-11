@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_app/features/date_picker/date_picker_page.dart';
+import 'package:test_app/features/table_calendar/table_calendar_page.dart';
 import 'package:test_app/features/transaction_history/transaction_history_page.dart';
 
 void main() {
@@ -54,6 +55,12 @@ class MyWidget extends StatelessWidget {
                 Navigator.of(context).push(DatePickerPage.page(context));
               },
               child: const Text('Date Picker Page'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(TableCalendarPage.page(context));
+              },
+              child: const Text('Table Calendar Page'),
             ),
           ],
         ),
