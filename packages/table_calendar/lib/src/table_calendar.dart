@@ -536,7 +536,7 @@ class _TableCalendarState<T> extends State<TableCalendar<T>> {
               if (dowCell == null) {
                 final weekdayString = widget.daysOfWeekStyle.dowTextFormatter
                         ?.call(day, widget.locale) ??
-                    DateFormat.E(widget.locale).format(day);
+                    DateFormat.E(widget.locale).format(day).capitalize();
 
                 final isWeekend =
                     _isWeekend(day, weekendDays: widget.weekendDays);

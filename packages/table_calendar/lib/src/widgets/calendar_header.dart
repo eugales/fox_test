@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 
 import '../customization/header_style.dart';
-import '../shared/utils.dart' show CalendarFormat, DayBuilder;
+import '../shared/utils.dart';
 import 'custom_icon_button.dart';
 import 'format_button.dart';
 
@@ -49,20 +49,13 @@ class CalendarHeader extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: [
-          if (headerStyle.leftChevronVisible)
-            CustomIconButton(
-              icon: headerStyle.leftChevronIcon,
-              onTap: onLeftChevronTap,
-              margin: headerStyle.leftChevronMargin,
-              padding: headerStyle.leftChevronPadding,
-            ),
           Expanded(
             child: headerTitleBuilder?.call(context, focusedMonth) ??
                 GestureDetector(
                   onTap: onHeaderTap,
                   onLongPress: onHeaderLongPress,
                   child: Text(
-                    text,
+                    text.capitalize(),
                     style: headerStyle.titleTextStyle,
                     textAlign: headerStyle.titleCentered
                         ? TextAlign.center
@@ -83,6 +76,13 @@ class CalendarHeader extends StatelessWidget {
                 textStyle: headerStyle.formatButtonTextStyle,
                 showsNextFormat: headerStyle.formatButtonShowsNext,
               ),
+            ),
+          if (headerStyle.leftChevronVisible)
+            CustomIconButton(
+              icon: headerStyle.leftChevronIcon,
+              onTap: onLeftChevronTap,
+              margin: headerStyle.leftChevronMargin,
+              padding: headerStyle.leftChevronPadding,
             ),
           if (headerStyle.rightChevronVisible)
             CustomIconButton(

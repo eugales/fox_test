@@ -52,3 +52,9 @@ bool isSameDay(DateTime? a, DateTime? b) {
 
   return a.year == b.year && a.month == b.month && a.day == b.day;
 }
+
+extension StringExtension on String {
+  String capitalize() {
+    return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
+  }
+}

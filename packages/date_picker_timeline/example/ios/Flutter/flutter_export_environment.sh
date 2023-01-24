@@ -1,6 +1,6 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/Users/adil/fvm/versions/3.3.5"
+export "FLUTTER_ROOT=/Users/adil/fvm/versions/3.7.0-1.2.pre"
 export "FLUTTER_APPLICATION_PATH=/Users/adil/rps/test_app/packages/date_picker_timeline/example"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_TARGET=lib/main.dart"
