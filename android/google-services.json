@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "412483415411",
+    "firebase_url": "https://tamaq-work-v1-default-rtdb.firebaseio.com",
+    "project_id": "tamaq-work-v1",
+    "storage_bucket": "tamaq-work-v1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412483415411:android:895dc262d2cbf3c0e7e906",
+        "android_client_info": {
+          "package_name": "kz.eugales.yt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412483415411-v9tnacq5fbk8gcm4lfc4f2ipqaja1lt7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMSN-XFr-Jy4vR2Lhc6gvLQDV-quv8dSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412483415411-v9tnacq5fbk8gcm4lfc4f2ipqaja1lt7.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "412483415411-1htgalai0e9f1enf9ubt1hte2lckh015.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "kz.eugales.tamaq"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
